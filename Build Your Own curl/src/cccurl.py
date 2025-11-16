@@ -40,8 +40,6 @@ try:
 except Exception as e:
     print(f"Error: {e}")
 
-# --- 4. Construct the HTTP GET Request --
-
 request = f"GET {path} HTTP/1.1\r\n"
 request += f"Host: {host}\r\n"
 request += "Accept: */*\r\n"
