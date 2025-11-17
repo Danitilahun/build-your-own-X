@@ -61,7 +61,6 @@ parser.add_argument("url", help="Http url")
 
 args = parser.parse_args()
 print(args)
-print("URL", args.url)
 
 parsed_url = urlparse(args.url)
 
