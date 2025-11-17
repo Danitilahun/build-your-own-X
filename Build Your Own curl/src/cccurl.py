@@ -8,7 +8,21 @@ import socket
 parser = argparse.ArgumentParser(
     description="A simple tool to learn how to command line tool.")
 
-parser.add_argument("-v", '--verbose',action='store_true', help="Enable verbose output")
+parser.add_argument(
+    "-X",
+    "--request",
+    dest="method",
+    default="GET",
+    choices=["GET", "POST", "PUT","DELETE", "HEAD","PATCH"],
+    help="Specify a custom request method to use (e.g., GET, POST, DELETE)."
+)
+parser.add_argument(
+    "-v",
+    '--verbose',
+    action='store_true',
+    help="Enable verbose output"
+)
+
 parser.add_argument("url", help="Http url")
 
 args = parser.parse_args()
@@ -41,12 +55,24 @@ try:
     print(f"Successfully connected to {host} on port {port}.\n")
 except Exception as e:
     print(f"Error: {e}")
+    
+request=""
+if args.method =="GET":
 
-request = f"GET {path} HTTP/1.1\r\n"
-request += f"Host: {host}\r\n"
-request += "Accept: */*\r\n"
-request += "Connection: close\r\n"
-request += "\r\n"
+    request = f"GET {path} HTTP/1.1\r\n"
+    request += f"Host: {host}\r\n"
+    request += "Accept: */*\r\n"
+    request += "Connection: close\r\n"
+    request += "\r\n"
+
+elif args.method == "DELETE":
+    
+    request = f"DELETE {path} HTTP/1.1\r\n"
+    request += f"Host: {host}\r\n"
+    request += "Accept: */*\r\n"
+    request += "Connection: close\r\n"
+    request += "\r\n"
+    
 
 print("Sending request", request)
 
