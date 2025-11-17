@@ -8,10 +8,11 @@ import socket
 parser = argparse.ArgumentParser(
     description="A simple tool to learn how to command line tool.")
 
+parser.add_argument("-v", '--verbose',action='store_true', help="Enable verbose output")
 parser.add_argument("url", help="Http url")
 
 args = parser.parse_args()
-
+print(args)
 print("URL", args.url)
 
 parsed_url = urlparse(args.url)
@@ -27,6 +28,7 @@ host = parsed_url.hostname
 port = parsed_url.port if parsed_url.port else (
     80 if parsed_url.scheme == 'http' else 443)
 path = parsed_url.path
+
 # Step 2
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -63,5 +65,21 @@ while True:
 client.close()
 
 response = response_bytes.decode('utf-8', errors='ignore')
+
+response_header, response_body = response.split('\r\n\r\n',1)
+# print(response_body)
+
+# Step 3
+if args.verbose:
+    raw_request = request.splitlines()
+    request_verbose_mode = [f'> {line}' for line in raw_request]
+    request_verbose_mode = "\n".join(request_verbose_mode)
+    print(request_verbose_mode)
     
-print(response)
+    raw_response = response_header.splitlines()
+    response_verbose_mode = [f'< {line}' for line in raw_response]
+    response_verbose_mode = "\n".join(response_verbose_mode)
+    print(response_verbose_mode)
+    print(response_body)
+else:
+    print(response_body)
