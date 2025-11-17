@@ -1,12 +1,21 @@
 import argparse
 from urllib.parse import urlparse
 import socket
+import json
 
 
 # Step 1
 
 parser = argparse.ArgumentParser(
     description="A simple tool to learn how to command line tool.")
+
+def json_or_string(value):
+    
+    try:
+        return json.loads(value)
+    
+    except json.JSONDecodeError:
+        return value
 
 parser.add_argument(
     "-X",
@@ -16,6 +25,7 @@ parser.add_argument(
     choices=["GET", "POST", "PUT","DELETE", "HEAD","PATCH"],
     help="Specify a custom request method to use (e.g., GET, POST, DELETE)."
 )
+
 parser.add_argument(
     "-v",
     '--verbose',
@@ -23,6 +33,30 @@ parser.add_argument(
     help="Enable verbose output"
 )
 
+parser.add_argument(
+    "-d",
+    '--data',
+    type=json_or_string,
+    # required=True,
+    help="data as string or json to be send"
+)
+
+def key_value_pair(value):
+    try:
+        key, val = value.split(':', 1)
+        return (key.strip(), val.strip())
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"'{value}' is not a valid Key:Value header.")
+
+parser.add_argument(
+    "-H",
+    '--header',
+    dest="headers",
+    type=json_or_string,
+    # action="append",
+    default='Content-Type: application/json',
+    help="Add a custom header to the request."
+)
 parser.add_argument("url", help="Http url")
 
 args = parser.parse_args()
@@ -56,24 +90,32 @@ try:
 except Exception as e:
     print(f"Error: {e}")
     
-request=""
-if args.method =="GET":
-
-    request = f"GET {path} HTTP/1.1\r\n"
-    request += f"Host: {host}\r\n"
-    request += "Accept: */*\r\n"
-    request += "Connection: close\r\n"
-    request += "\r\n"
-
-elif args.method == "DELETE":
+request = f"{args.method} {path} HTTP/1.1\r\n"
+request += f"Host: {host}\r\n"
+request += "Accept: */*\r\n"
+request += "Connection: close\r\n"
+   
+body = None
+ 
+if args.method in ["POST", "PUT", "PATCH"]:
+    if args.data:
+        if isinstance(args.data,dict):
+            body = json.dumps(args.data)
+        else:
+            body = args.data
     
-    request = f"DELETE {path} HTTP/1.1\r\n"
-    request += f"Host: {host}\r\n"
-    request += "Accept: */*\r\n"
-    request += "Connection: close\r\n"
-    request += "\r\n"
+        body_bytes = body.encode("utf-8")
+        content_length = len(body_bytes)
+        
+        request += f"{args.headers}\r\n"
+        request += f"Content-Length: {content_length}\r\n"
     
+request += "Connection: close\r\n"
+request += "\r\n"
 
+if body:
+    request += body
+    
 print("Sending request", request)
 
 client.sendall(request.encode())
