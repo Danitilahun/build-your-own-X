@@ -5,7 +5,6 @@ def json_or_string(value):
     
     try:
         return json.loads(value)
-    
     except json.JSONDecodeError:
         return value
     
