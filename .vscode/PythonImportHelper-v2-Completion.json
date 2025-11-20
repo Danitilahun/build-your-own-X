@@ -1,0 +1,172 @@
+[
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "urlparse",
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "isExtraImport": true,
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "json_or_string",
+        "kind": 2,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "def json_or_string(value):\n    try:\n        return json.loads(value)\n    except json.JSONDecodeError:\n        return value\nparser.add_argument(\n    \"-X\",\n    \"--request\",\n    dest=\"method\",\n    default=\"GET\",",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "key_value_pair",
+        "kind": 2,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "def key_value_pair(value):\n    try:\n        key, val = value.split(':', 1)\n        return (key.strip(), val.strip())\n    except ValueError:\n        raise argparse.ArgumentTypeError(f\"'{value}' is not a valid Key:Value header.\")\nparser.add_argument(\n    \"-H\",\n    '--header',\n    dest=\"headers\",",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "parser = argparse.ArgumentParser(\n    description=\"A simple tool to learn how to command line tool.\")\ndef json_or_string(value):\n    try:\n        return json.loads(value)\n    except json.JSONDecodeError:\n        return value\nparser.add_argument(\n    \"-X\",\n    \"--request\",",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "args = parser.parse_args()\nprint(args)\nparsed_url = urlparse(args.url)\nprint(\"Protocol :\", parsed_url.scheme)\nprint(\"Host :\", parsed_url.hostname)\nprint(\"Port :\", parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443))\nprint(\"Path :\", parsed_url.path)\nhost = parsed_url.hostname\nport = parsed_url.port if parsed_url.port else (",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "parsed_url",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "parsed_url = urlparse(args.url)\nprint(\"Protocol :\", parsed_url.scheme)\nprint(\"Host :\", parsed_url.hostname)\nprint(\"Port :\", parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443))\nprint(\"Path :\", parsed_url.path)\nhost = parsed_url.hostname\nport = parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443)\npath = parsed_url.path",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "host",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "host = parsed_url.hostname\nport = parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443)\npath = parsed_url.path\n# Step 2\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    host_ip = socket.gethostbyname(parsed_url.hostname)\n    print(host_ip)\n    client.connect((host_ip, port))",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "port",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "port = parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443)\npath = parsed_url.path\n# Step 2\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    host_ip = socket.gethostbyname(parsed_url.hostname)\n    print(host_ip)\n    client.connect((host_ip, port))\n    print(f\"Successfully connected to {host} on port {port}.\\n\")",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "path = parsed_url.path\n# Step 2\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    host_ip = socket.gethostbyname(parsed_url.hostname)\n    print(host_ip)\n    client.connect((host_ip, port))\n    print(f\"Successfully connected to {host} on port {port}.\\n\")\nexcept Exception as e:\n    print(f\"Error: {e}\")",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    host_ip = socket.gethostbyname(parsed_url.hostname)\n    print(host_ip)\n    client.connect((host_ip, port))\n    print(f\"Successfully connected to {host} on port {port}.\\n\")\nexcept Exception as e:\n    print(f\"Error: {e}\")\nrequest = f\"{args.method} {path} HTTP/1.1\\r\\n\"\nrequest += f\"Host: {host}\\r\\n\"",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "request = f\"{args.method} {path} HTTP/1.1\\r\\n\"\nrequest += f\"Host: {host}\\r\\n\"\nrequest += \"Accept: */*\\r\\n\"\nrequest += \"Connection: close\\r\\n\"\nbody = None\nif args.method in [\"POST\", \"PUT\", \"PATCH\"]:\n    if args.data:\n        if isinstance(args.data,dict):\n            body = json.dumps(args.data)\n        else:",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "body",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "body = None\nif args.method in [\"POST\", \"PUT\", \"PATCH\"]:\n    if args.data:\n        if isinstance(args.data,dict):\n            body = json.dumps(args.data)\n        else:\n            body = args.data\n        body_bytes = body.encode(\"utf-8\")\n        content_length = len(body_bytes)\n        request += f\"{args.headers}\\r\\n\"",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "response_bytes",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "response_bytes = b\"\"\nwhile True:\n    chunk = client.recv(4096)\n    if not chunk:\n        break\n    response_bytes+=chunk\nclient.close()\nresponse = response_bytes.decode('utf-8', errors='ignore')\nresponse_header, response_body = response.split('\\r\\n\\r\\n',1)\n# print(response_body)",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "Build Your Own curl.src.cccurl",
+        "description": "Build Your Own curl.src.cccurl",
+        "peekOfCode": "response = response_bytes.decode('utf-8', errors='ignore')\nresponse_header, response_body = response.split('\\r\\n\\r\\n',1)\n# print(response_body)\n# Step 3\nif args.verbose:\n    raw_request = request.splitlines()\n    request_verbose_mode = [f'> {line}' for line in raw_request]\n    request_verbose_mode = \"\\n\".join(request_verbose_mode)\n    print(request_verbose_mode)\n    raw_response = response_header.splitlines()",
+        "detail": "Build Your Own curl.src.cccurl",
+        "documentation": {}
+    },
+    {
+        "label": "json_or_string",
+        "kind": 2,
+        "importPath": "Build Your Own curl.src.utils",
+        "description": "Build Your Own curl.src.utils",
+        "peekOfCode": "def json_or_string(value):\n    try:\n        return json.loads(value)\n    except json.JSONDecodeError:\n        return value\ndef key_value_pair(value):\n    try:\n        key, val = value.split(':', 1)\n        return (key.strip(), val.strip())\n    except ValueError:",
+        "detail": "Build Your Own curl.src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "key_value_pair",
+        "kind": 2,
+        "importPath": "Build Your Own curl.src.utils",
+        "description": "Build Your Own curl.src.utils",
+        "peekOfCode": "def key_value_pair(value):\n    try:\n        key, val = value.split(':', 1)\n        return (key.strip(), val.strip())\n    except ValueError:\n        raise argparse.ArgumentTypeError(f\"'{value}' is not a valid Key:Value header.\")",
+        "detail": "Build Your Own curl.src.utils",
+        "documentation": {}
+    }
+]
