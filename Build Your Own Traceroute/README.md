@@ -78,31 +78,6 @@ traceroute to dns.google.com (8.8.4.4), 64 hops max, 32 byte packets
 8  dns.google (8.8.4.4) 35.859 ms
 ```
 
-## Architecture
-
-### Core Components
-
-#### `Traceroute` Class
-
-- **`__init__`**: Initializes with hostname, resolves IP, sets up parameters
-- **`run`**: Main entry point, orchestrates the traceroute process
-- **`_trace_hop`**: Sends probes for a single TTL level, collects responses
-- **`_get_hostname`**: Performs reverse DNS lookup for IP addresses
-- **`_print_hop_result`**: Formats and prints hop information
-
-### Key Implementation Details
-
-1. **ICMP Socket**: Raw socket for receiving ICMP Time Exceeded messages
-2. **UDP Socket**: Standard socket for sending probes to high-numbered UDP ports
-3. **TTL Handling**: Each probe has a specific TTL value that increments with each hop
-4. **Port Management**: Uses UDP ports 33434-33534 as per standard traceroute
-5. **Timeout Handling**: Uses socket timeout to detect unreachable/unresponsive hosts
-
-## Dependencies
-
-- Python 3.6+
-- icmplib >= 3.0.0
-
 ## Testing
 
 Run the test suite:
@@ -141,33 +116,6 @@ The test suite includes:
   - Step 5: RTT measurement and formatting
 
 - **Integration Tests**: End-to-end functionality tests
-
-## Implementation Notes
-
-### Platform Compatibility
-
-- **Linux/macOS**: Full functionality with raw sockets
-- **Windows**: May require elevated privileges for raw ICMP sockets. Consider using `icmplib` on Windows for better compatibility.
-
-### Performance Considerations
-
-- Default timeout: 2 seconds per hop
-- Default max hops: 64 (industry standard)
-- Each hop sends 3 probes for reliability
-- Unique IPs are aggregated in output
-
-### Error Handling
-
-- Invalid hostnames are caught and reported
-- Failed DNS lookups fall back to IP addresses
-- Socket errors are handled gracefully
-- Timeout errors show as wildcard markers
-
-## References
-
-- [Man page: traceroute](https://linux.die.net/man/8/traceroute)
-- [RFC 792: ICMP](https://tools.ietf.org/html/rfc792)
-- [UDP Protocol](https://tools.ietf.org/html/rfc768)
 
 ## Author
 
