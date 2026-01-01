@@ -9,14 +9,6 @@
         "documentation": {}
     },
     {
-        "label": "urlparse",
-        "importPath": "urllib.parse",
-        "description": "urllib.parse",
-        "isExtraImport": true,
-        "detail": "urllib.parse",
-        "documentation": {}
-    },
-    {
         "label": "socket",
         "kind": 6,
         "isExtraImport": true,
@@ -35,120 +27,208 @@
         "documentation": {}
     },
     {
-        "label": "json_or_string",
+        "label": "urlparse",
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "isExtraImport": true,
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPClient",
+        "importPath": "src.client",
+        "description": "src.client",
+        "isExtraImport": true,
+        "detail": "src.client",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "find_packages",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "find_packages",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "Traceroute",
+        "importPath": "src.traceroute",
+        "description": "src.traceroute",
+        "isExtraImport": true,
+        "detail": "src.traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "DNSResolver",
+        "importPath": "src.traceroute",
+        "description": "src.traceroute",
+        "isExtraImport": true,
+        "detail": "src.traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "ProbeSocket",
+        "importPath": "src.traceroute",
+        "description": "src.traceroute",
+        "isExtraImport": true,
+        "detail": "src.traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "OutputFormatter",
+        "importPath": "src.traceroute",
+        "description": "src.traceroute",
+        "isExtraImport": true,
+        "detail": "src.traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "HopTracer",
+        "importPath": "src.traceroute",
+        "description": "src.traceroute",
+        "isExtraImport": true,
+        "detail": "src.traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "main",
         "kind": 2,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "def json_or_string(value):\n    try:\n        return json.loads(value)\n    except json.JSONDecodeError:\n        return value\nparser.add_argument(\n    \"-X\",\n    \"--request\",\n    dest=\"method\",\n    default=\"GET\",",
-        "detail": "Build Your Own curl.src.cccurl",
+        "importPath": "Build Your Own curl.src.cli",
+        "description": "Build Your Own curl.src.cli",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(\n        description=\"A simple tool to learn how to command line tool.\")\n    parser.add_argument(\n        \"-X\", \"--request\",\n        dest=\"method\",\n        default=\"GET\",\n        choices=[\"GET\", \"POST\", \"PUT\", \"DELETE\", \"HEAD\", \"PATCH\"],\n        help=\"Specify a custom request method to use (e.g., GET, POST, DELETE).\"\n    )",
+        "detail": "Build Your Own curl.src.cli",
         "documentation": {}
     },
     {
-        "label": "key_value_pair",
-        "kind": 2,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "def key_value_pair(value):\n    try:\n        key, val = value.split(':', 1)\n        return (key.strip(), val.strip())\n    except ValueError:\n        raise argparse.ArgumentTypeError(f\"'{value}' is not a valid Key:Value header.\")\nparser.add_argument(\n    \"-H\",\n    '--header',\n    dest=\"headers\",",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "parser",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "parser = argparse.ArgumentParser(\n    description=\"A simple tool to learn how to command line tool.\")\ndef json_or_string(value):\n    try:\n        return json.loads(value)\n    except json.JSONDecodeError:\n        return value\nparser.add_argument(\n    \"-X\",\n    \"--request\",",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "args",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "args = parser.parse_args()\nprint(args)\nparsed_url = urlparse(args.url)\nprint(\"Protocol :\", parsed_url.scheme)\nprint(\"Host :\", parsed_url.hostname)\nprint(\"Port :\", parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443))\nprint(\"Path :\", parsed_url.path)\nhost = parsed_url.hostname\nport = parsed_url.port if parsed_url.port else (",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "parsed_url",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "parsed_url = urlparse(args.url)\nprint(\"Protocol :\", parsed_url.scheme)\nprint(\"Host :\", parsed_url.hostname)\nprint(\"Port :\", parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443))\nprint(\"Path :\", parsed_url.path)\nhost = parsed_url.hostname\nport = parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443)\npath = parsed_url.path",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "host",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "host = parsed_url.hostname\nport = parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443)\npath = parsed_url.path\n# Step 2\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    host_ip = socket.gethostbyname(parsed_url.hostname)\n    print(host_ip)\n    client.connect((host_ip, port))",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "port",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "port = parsed_url.port if parsed_url.port else (\n    80 if parsed_url.scheme == 'http' else 443)\npath = parsed_url.path\n# Step 2\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    host_ip = socket.gethostbyname(parsed_url.hostname)\n    print(host_ip)\n    client.connect((host_ip, port))\n    print(f\"Successfully connected to {host} on port {port}.\\n\")",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "path = parsed_url.path\n# Step 2\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    host_ip = socket.gethostbyname(parsed_url.hostname)\n    print(host_ip)\n    client.connect((host_ip, port))\n    print(f\"Successfully connected to {host} on port {port}.\\n\")\nexcept Exception as e:\n    print(f\"Error: {e}\")",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "client",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    host_ip = socket.gethostbyname(parsed_url.hostname)\n    print(host_ip)\n    client.connect((host_ip, port))\n    print(f\"Successfully connected to {host} on port {port}.\\n\")\nexcept Exception as e:\n    print(f\"Error: {e}\")\nrequest = f\"{args.method} {path} HTTP/1.1\\r\\n\"\nrequest += f\"Host: {host}\\r\\n\"",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "request = f\"{args.method} {path} HTTP/1.1\\r\\n\"\nrequest += f\"Host: {host}\\r\\n\"\nrequest += \"Accept: */*\\r\\n\"\nrequest += \"Connection: close\\r\\n\"\nbody = None\nif args.method in [\"POST\", \"PUT\", \"PATCH\"]:\n    if args.data:\n        if isinstance(args.data,dict):\n            body = json.dumps(args.data)\n        else:",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "body",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "body = None\nif args.method in [\"POST\", \"PUT\", \"PATCH\"]:\n    if args.data:\n        if isinstance(args.data,dict):\n            body = json.dumps(args.data)\n        else:\n            body = args.data\n        body_bytes = body.encode(\"utf-8\")\n        content_length = len(body_bytes)\n        request += f\"{args.headers}\\r\\n\"",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "response_bytes",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "response_bytes = b\"\"\nwhile True:\n    chunk = client.recv(4096)\n    if not chunk:\n        break\n    response_bytes+=chunk\nclient.close()\nresponse = response_bytes.decode('utf-8', errors='ignore')\nresponse_header, response_body = response.split('\\r\\n\\r\\n',1)\n# print(response_body)",
-        "detail": "Build Your Own curl.src.cccurl",
-        "documentation": {}
-    },
-    {
-        "label": "response",
-        "kind": 5,
-        "importPath": "Build Your Own curl.src.cccurl",
-        "description": "Build Your Own curl.src.cccurl",
-        "peekOfCode": "response = response_bytes.decode('utf-8', errors='ignore')\nresponse_header, response_body = response.split('\\r\\n\\r\\n',1)\n# print(response_body)\n# Step 3\nif args.verbose:\n    raw_request = request.splitlines()\n    request_verbose_mode = [f'> {line}' for line in raw_request]\n    request_verbose_mode = \"\\n\".join(request_verbose_mode)\n    print(request_verbose_mode)\n    raw_response = response_header.splitlines()",
-        "detail": "Build Your Own curl.src.cccurl",
+        "label": "HTTPClient",
+        "kind": 6,
+        "importPath": "Build Your Own curl.src.client",
+        "description": "Build Your Own curl.src.client",
+        "peekOfCode": "class HTTPClient:\n    def __init__(self):\n        pass\n    def send(self, url, method=\"GET\", headers=None, data=None, verbose=False):\n        parsed_url = urlparse(url)\n        # Step 1\n        host = parsed_url.hostname\n        port = parsed_url.port if parsed_url.port else (\n            80 if parsed_url.scheme == 'http' else 443)\n        path = parsed_url.path if parsed_url.path else \"/\"",
+        "detail": "Build Your Own curl.src.client",
         "documentation": {}
     },
     {
@@ -167,6 +247,177 @@
         "description": "Build Your Own curl.src.utils",
         "peekOfCode": "def key_value_pair(value):\n    try:\n        key, val = value.split(':', 1)\n        return (key.strip(), val.strip())\n    except ValueError:\n        raise argparse.ArgumentTypeError(f\"'{value}' is not a valid Key:Value header.\")",
         "detail": "Build Your Own curl.src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "TestHTTPClient",
+        "kind": 6,
+        "importPath": "Build Your Own curl.tests.test_client",
+        "description": "Build Your Own curl.tests.test_client",
+        "peekOfCode": "class TestHTTPClient:\n    def setup_method(self):\n        \"\"\"Runs before every test\"\"\"\n        self.client = HTTPClient()\n    def test_simple_get_request(self, capsys):\n        \"\"\"\n        Test a basic GET request.\n        capsys: A pytest fixture that captures print() output.\n        \"\"\"\n        url = f\"{BASE_URL}/get\"",
+        "detail": "Build Your Own curl.tests.test_client",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_URL",
+        "kind": 5,
+        "importPath": "Build Your Own curl.tests.test_client",
+        "description": "Build Your Own curl.tests.test_client",
+        "peekOfCode": "BASE_URL = \"http://eu.httpbin.org\"\nclass TestHTTPClient:\n    def setup_method(self):\n        \"\"\"Runs before every test\"\"\"\n        self.client = HTTPClient()\n    def test_simple_get_request(self, capsys):\n        \"\"\"\n        Test a basic GET request.\n        capsys: A pytest fixture that captures print() output.\n        \"\"\"",
+        "detail": "Build Your Own curl.tests.test_client",
+        "documentation": {}
+    },
+    {
+        "label": "Traceroute",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.src.traceroute.core",
+        "description": "Build Your Own Traceroute.src.traceroute.core",
+        "peekOfCode": "class Traceroute:\n    \"\"\"Main traceroute implementation.\"\"\"\n    def __init__(self, hostname: str, max_hops: int = 64, timeout: float = 2.0, packet_size: int = 32):\n        self.hostname = hostname\n        self.max_hops = max_hops\n        self.timeout = timeout\n        self.packet_size = packet_size\n        payload_text = b'codingchallenges.fyi trace route'\n        self.payload = payload_text + b'0' * \\\n            max(0, packet_size - len(payload_text))",
+        "detail": "Build Your Own Traceroute.src.traceroute.core",
+        "documentation": {}
+    },
+    {
+        "label": "DNSResolver",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.src.traceroute.dns",
+        "description": "Build Your Own Traceroute.src.traceroute.dns",
+        "peekOfCode": "class DNSResolver:\n    \"\"\"Handles DNS resolution for hostnames and reverse IP lookups.\"\"\"\n    @staticmethod\n    def resolve_hostname(hostname: str) -> str:\n        \"\"\"Resolve hostname to IP address.\"\"\"\n        try:\n            return socket.gethostbyname(hostname)\n        except socket.gaierror:\n            print(f\"Error: Cannot resolve hostname '{hostname}'\")\n            sys.exit(1)",
+        "detail": "Build Your Own Traceroute.src.traceroute.dns",
+        "documentation": {}
+    },
+    {
+        "label": "HopTracer",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.src.traceroute.hop",
+        "description": "Build Your Own Traceroute.src.traceroute.hop",
+        "peekOfCode": "class HopTracer:\n    \"\"\"Handles tracing individual hops.\"\"\"\n    def __init__(self, dest_ip: str, probe_socket: ProbeSocket):\n        self.dest_ip = dest_ip\n        self.probe_socket = probe_socket\n    def trace_hop(self, ttl: int) -> Dict:\n        hop_data = {\n            'hop': ttl,\n            'responses': [],\n            'reached_destination': False",
+        "detail": "Build Your Own Traceroute.src.traceroute.hop",
+        "documentation": {}
+    },
+    {
+        "label": "OutputFormatter",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.src.traceroute.output",
+        "description": "Build Your Own Traceroute.src.traceroute.output",
+        "peekOfCode": "class OutputFormatter:\n    \"\"\"Handles formatting and printing of traceroute output.\"\"\"\n    @staticmethod\n    def print_header(hostname: str, dest_ip: str, max_hops: int, packet_size: int) -> None:\n        print(\n            f\"traceroute to {hostname} ({dest_ip}), {max_hops} hops max, {packet_size} byte packets\")\n    @staticmethod\n    def print_hop(hop_num: int, responses: Sequence[Optional[Dict[str, Any]]], resolver: DNSResolver) -> None:\n        if not responses or not any(r is not None for r in responses):\n            print(f\"{hop_num} *  * *\")",
+        "detail": "Build Your Own Traceroute.src.traceroute.output",
+        "documentation": {}
+    },
+    {
+        "label": "ProbeSocket",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.src.traceroute.probe",
+        "description": "Build Your Own Traceroute.src.traceroute.probe",
+        "peekOfCode": "class ProbeSocket:\n    \"\"\"Manages socket creation and probe packet operations.\"\"\"\n    # ICMP types\n    ICMP_ECHO_REQUEST = 8\n    ICMP_ECHO_REPLY = 0\n    ICMP_TIME_EXCEEDED = 11\n    # UDP port range for traceroute\n    UDP_PORT_START = 33434\n    UDP_PORT_END = 33534\n    def __init__(self, payload: bytes, timeout: float = 2.0):",
+        "detail": "Build Your Own Traceroute.src.traceroute.probe",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "Build Your Own Traceroute.src.cli",
+        "description": "Build Your Own Traceroute.src.cli",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(\n        description=\"\"\"A simple tool to learn how to create Traceroute.\n                    Traceroute is a tool that allows us to trace the route network packets \n                    will take from one computer to another over a network.\"\"\"\n    )\n    parser.add_argument('hostname', help=\"Hostname or IP address to trace to.\")\n    parser.add_argument('--max-hops', type=int, default=64,\n                        help=\"Maximum number of hops (default: 64)\")\n    parser.add_argument('--timeout', type=float, default=2.0,",
+        "detail": "Build Your Own Traceroute.src.cli",
+        "documentation": {}
+    },
+    {
+        "label": "TestDNSResolver",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestDNSResolver(unittest.TestCase):\n    \"\"\"Test cases for DNSResolver class\"\"\"\n    @patch('socket.gethostbyname')\n    def test_resolve_hostname(self, mock_gethostbyname):\n        \"\"\"Test hostname resolution\"\"\"\n        mock_gethostbyname.return_value = \"142.251.41.14\"\n        result = DNSResolver.resolve_hostname(\"google.com\")\n        self.assertEqual(result, \"142.251.41.14\")\n    @patch('socket.gethostbyaddr')\n    def test_reverse_lookup_success(self, mock_gethostbyaddr):",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestProbeSocket",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestProbeSocket(unittest.TestCase):\n    \"\"\"Test cases for ProbeSocket class\"\"\"\n    def test_initialization(self):\n        \"\"\"Test ProbeSocket initialization\"\"\"\n        payload = b'test'\n        socket_mgr = ProbeSocket(payload, timeout=2.0)\n        self.assertEqual(socket_mgr.payload, payload)\n        self.assertEqual(socket_mgr.timeout, 2.0)\n    def test_port_constants(self):\n        \"\"\"Test UDP port range constants\"\"\"",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestOutputFormatter",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestOutputFormatter(unittest.TestCase):\n    \"\"\"Test cases for OutputFormatter class\"\"\"\n    @patch('builtins.print')\n    def test_print_header(self, mock_print):\n        \"\"\"Test header printing\"\"\"\n        OutputFormatter.print_header(\"google.com\", \"142.251.41.14\", 64, 32)\n        mock_print.assert_called_once()\n        output = mock_print.call_args[0][0]\n        self.assertIn(\"google.com\", output)\n        self.assertIn(\"142.251.41.14\", output)",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestHopTracer",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestHopTracer(unittest.TestCase):\n    \"\"\"Test cases for HopTracer class\"\"\"\n    def test_initialization(self):\n        \"\"\"Test HopTracer initialization\"\"\"\n        payload = b'test'\n        probe_socket = ProbeSocket(payload)\n        hop_tracer = HopTracer(\"8.8.8.8\", probe_socket)\n        self.assertEqual(hop_tracer.dest_ip, \"8.8.8.8\")\n        self.assertEqual(hop_tracer.probe_socket, probe_socket)\nclass TestTraceroute(unittest.TestCase):",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestTraceroute",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestTraceroute(unittest.TestCase):\n    \"\"\"Test cases for main Traceroute class\"\"\"\n    @patch('socket.gethostbyname')\n    def test_initialization(self, mock_gethostbyname):\n        \"\"\"Test Traceroute initialization\"\"\"\n        mock_gethostbyname.return_value = \"142.251.41.14\"\n        tracer = Traceroute(\"google.com\")\n        self.assertEqual(tracer.hostname, \"google.com\")\n        self.assertEqual(tracer.dest_ip, \"142.251.41.14\")\n        self.assertEqual(tracer.max_hops, 64)",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestIntegration",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestIntegration(unittest.TestCase):\n    \"\"\"Integration tests\"\"\"\n    @patch('socket.gethostbyname')\n    @patch.object(ProbeSocket, 'send_probe')\n    def test_run_basic(self, mock_send, mock_resolve):\n        \"\"\"Test basic run flow\"\"\"\n        mock_resolve.return_value = \"8.8.8.8\"\n        mock_send.return_value = None\n        tracer = Traceroute(\"8.8.8.8\", max_hops=1)\n        with patch('builtins.print') as mock_print:",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestStep1",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestStep1(unittest.TestCase):\n    \"\"\"Test Step 1: Print header\"\"\"\n    @patch('socket.gethostbyname')\n    def test_header_format(self, mock_gethostbyname):\n        \"\"\"Step 1: Verify header format\"\"\"\n        mock_gethostbyname.return_value = \"8.8.4.4\"\n        tracer = Traceroute(\"dns.google.com\")\n        self.assertEqual(tracer.hostname, \"dns.google.com\")\n        self.assertEqual(tracer.dest_ip, \"8.8.4.4\")\nclass TestStep2(unittest.TestCase):",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestStep2",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestStep2(unittest.TestCase):\n    \"\"\"Test Step 2: Sockets and TTL\"\"\"\n    def test_socket_constants(self):\n        \"\"\"Step 2: Verify socket constants\"\"\"\n        self.assertEqual(ProbeSocket.UDP_PORT_START, 33434)\n        self.assertEqual(ProbeSocket.UDP_PORT_END, 33534)\nclass TestStep3(unittest.TestCase):\n    \"\"\"Test Step 3: Hostname resolution\"\"\"\n    @patch('socket.gethostbyaddr')\n    def test_hostname_resolution(self, mock_gethostbyaddr):",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestStep3",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestStep3(unittest.TestCase):\n    \"\"\"Test Step 3: Hostname resolution\"\"\"\n    @patch('socket.gethostbyaddr')\n    def test_hostname_resolution(self, mock_gethostbyaddr):\n        \"\"\"Step 3: Verify hostname resolution\"\"\"\n        mock_gethostbyaddr.return_value = (\"google.com\", [], [\"8.8.4.4\"])\n        result = DNSResolver.reverse_lookup(\"8.8.4.4\")\n        self.assertEqual(result, \"google\")\nclass TestStep4(unittest.TestCase):\n    \"\"\"Test Step 4: TTL incrementation\"\"\"",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestStep4",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestStep4(unittest.TestCase):\n    \"\"\"Test Step 4: TTL incrementation\"\"\"\n    @patch('socket.gethostbyname')\n    def test_max_hops(self, mock_gethostbyname):\n        \"\"\"Step 4: Verify TTL/hop incrementing works\"\"\"\n        mock_gethostbyname.return_value = \"8.8.8.8\"\n        tracer = Traceroute(\"8.8.8.8\", max_hops=7)\n        self.assertEqual(tracer.max_hops, 7)\nclass TestStep5(unittest.TestCase):\n    \"\"\"Test Step 5: RTT measurement\"\"\"",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
+        "documentation": {}
+    },
+    {
+        "label": "TestStep5",
+        "kind": 6,
+        "importPath": "Build Your Own Traceroute.tests.test_traceroute",
+        "description": "Build Your Own Traceroute.tests.test_traceroute",
+        "peekOfCode": "class TestStep5(unittest.TestCase):\n    \"\"\"Test Step 5: RTT measurement\"\"\"\n    @patch('builtins.print')\n    @patch('socket.gethostbyaddr')\n    def test_rtt_formatting(self, mock_gethostbyaddr, mock_print):\n        \"\"\"Step 5: Verify RTT measurement and formatting\"\"\"\n        mock_gethostbyaddr.side_effect = socket.herror()\n        resolver = DNSResolver()\n        responses = [\n            {'ip': '192.168.1.1', 'rtt_ms': 5.131},",
+        "detail": "Build Your Own Traceroute.tests.test_traceroute",
         "documentation": {}
     }
 ]
